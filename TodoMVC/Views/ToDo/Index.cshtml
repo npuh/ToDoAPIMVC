@@ -11,36 +11,28 @@
 </p>
 <table class="table">
     <tr>
-        @*<th>
-            @Html.DisplayNameFor(model => model.TaskId)
-        </th>*@
+       
         <th>
             @Html.DisplayNameFor(model => model.TaskName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.TaskDescription)
         </th>
-        @*<th>
-            @Html.DisplayNameFor(model => model.DueDate)
-        </th>*@
+    
         <th>Done</th>
         
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.TaskId)
-        </td>*@
+   
         <td>
             @Html.DisplayFor(modelItem => item.TaskName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TaskDescription)
         </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => item.DueDate)
-        </td>*@
+      
         <td>
             <a href="@Url.Action("AddOrEdit", "Todo", new {id=item.TaskId})" class="btn btn-default"><i class="fas fa-edit"></i>Edit</a>
             <a onclick="Delete(@item.TaskId)" class="btn btn-default"><i class="far fa-trash-alt"></i> Delete</a>
