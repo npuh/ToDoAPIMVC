@@ -1,0 +1,60 @@
+﻿@model IEnumerable<TodoMVC.Models.MVCTDoDBModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>To dos</h2>
+
+<p>
+    <a href="@Url.Action("AddOrEdit", "ToDo")" class="btn btn-default"><i class="fas fa-plus"></i> Create new</a>
+</p>
+<table class="table">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.TaskId)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.TaskName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskDescription)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </th>*@
+        <th>Done</th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.TaskId)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.TaskName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaskDescription)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.DueDate)
+        </td>*@
+        <td>
+            <a href="@Url.Action("AddOrEdit", "Todo", new {id=item.TaskId})" class="btn btn-default"><i class="fas fa-edit"></i>Edit</a>
+            <a onclick="Delete(@item.TaskId)" class="btn btn-default"><i class="far fa-trash-alt"></i> Delete</a>
+        </td>
+        
+    </tr>
+}
+
+</table>
+@section scripts{
+    <script>
+        function Delete(id) {  
+            
+            window.location.href = '@Url.Action("Delete", "ToDo")/' + id;          
+        }
+        </script>
+    }

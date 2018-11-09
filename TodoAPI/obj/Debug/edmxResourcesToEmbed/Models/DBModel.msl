@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TDDBModelStoreContainer" CdmEntityContainer="DBModel">
+    <EntitySetMapping Name="TDoDB">
+      <EntityTypeMapping TypeName="TDDBModel.TDoDB">
+        <MappingFragment StoreEntitySet="TDoDB">
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="TaskName" ColumnName="TaskName" />
+          <ScalarProperty Name="TaskDescription" ColumnName="TaskDescription" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
