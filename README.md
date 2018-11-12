@@ -1,3 +1,3 @@
 # ToDoApiMVC
 
-A basic To do application made with API and MVC with localdatabase, CRUD functions. 
+A basic To do application made with API and MVC with a local database, CRUD functions. 
