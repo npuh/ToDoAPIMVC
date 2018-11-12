@@ -10,15 +10,14 @@
     @Html.AntiForgeryToken()
     @Html.HiddenFor(model => model.TaskId)
     
-    <div class="form-horizontal">
+    <div class="form-horizontal" id="resetForm">
         <div>
             <h4>Add or Edit</h4>
         </div>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-   
-
-        <div class="form-group">
+  
+        <div class="form-group" >
             @Html.LabelFor(model => model.TaskName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.TaskName, new { htmlAttributes = new { @class = "form-control" } })
@@ -33,24 +32,22 @@
                 @Html.ValidationMessageFor(model => model.TaskDescription, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.DueDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DueDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DueDate, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
-        <div class="form-group">
+        <div class="form-group" >
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />
+                <input type="reset" value="Reset form" class="btn" onclick="clearForm()"/>
             </div>
         </div>
+        <a href="@Url.Action("Index", "ToDo")">Back to front page</a>
     </div>
 }
 
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+<script>
+    function clearForm() {
+        document.getElementById("resetForm").reset;
+    } 
+    </script>
 }

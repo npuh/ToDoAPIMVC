@@ -4,12 +4,12 @@
     ViewBag.Title = "Index";
 }
 
-<h2>To dos</h2>
+<h2>So much to do...</h2>
 
 <p>
-    <a href="@Url.Action("AddOrEdit", "ToDo")" class="btn btn-default"><i class="fas fa-plus"></i> Create new</a>
+    
 </p>
-<table class="table">
+<table class="table table-hover" >
     <tr>
        
         <th>
@@ -19,7 +19,7 @@
             @Html.DisplayNameFor(model => model.TaskDescription)
         </th>
     
-        <th>Done</th>
+        <th><a href="@Url.Action("AddOrEdit", "ToDo")" class="btn btn-primary"><i class="fas fa-plus"></i> Create new</a></th>
         
     </tr>
 

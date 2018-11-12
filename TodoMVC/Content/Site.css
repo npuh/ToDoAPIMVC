@@ -17,8 +17,26 @@
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+input{
+    max-width: 250px;
+}
 select,
 textarea {
     max-width: 280px;
+    width: 100px;
+
+}
+.form-horizontal {
+    width: auto
+}
+
+
+
+.navbar{
+    background: #211d1d;
+ padding: 3px;
+}
+
+form{
+    padding: 3%;
 }
